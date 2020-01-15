@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <ImageView
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/mssBlue"
+                android:scaleType="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_person_black_24dp"
+                    android:layout_margin="10dp"/>
+
+            <TextView
+                    android:id="@+id/tv_judul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Judul Video"
+                    android:textSize="25dp"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="#00A5FC"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"/>
+            <TextView
+                    android:id="@+id/tv_mapel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="33dp"
+                    android:text="Nama Mapel"
+                    android:textColor="#00A5FC"
+                    android:textSize="15dp"/>
+
+
+
+
+        </RelativeLayout>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#90909090"/>
+    </LinearLayout>
+
+
+</LinearLayout>

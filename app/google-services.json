@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "931615421621",
+    "firebase_url": "https://mysmartschool-eae0c.firebaseio.com",
+    "project_id": "mysmartschool-eae0c",
+    "storage_bucket": "mysmartschool-eae0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931615421621:android:5d68f8b1975db7d6",
+        "android_client_info": {
+          "package_name": "com.example.mysmartschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931615421621-v2sglna1okjem4drlcobi8e0clc6t58s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mysmartschool",
+            "certificate_hash": "7c6fea45af51e04b4cce1639748a9b9c67a4ca4c"
+          }
+        },
+        {
+          "client_id": "931615421621-cq08nq3jehp85nm2765jp6k1dafqrpt2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY_ju_ND3GrmgLpfzXkW-tTYjgAhjZG2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931615421621-cq08nq3jehp85nm2765jp6k1dafqrpt2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="27dp"
+              android:background="@drawable/mywork_tugas_corner"
+              android:orientation="horizontal"
+              android:gravity="center_vertical">
+    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent"
+              android:id="@+id/tugas_view_title"
+              android:paddingLeft="15dp"
+              android:gravity="center_vertical"
+              android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+              android:textSize="14sp"
+              android:textStyle="bold"
+              android:text="Bahasa Indonesia | Text Observasi"/>
+    <ImageView android:layout_width="25dp" android:layout_height="wrap_content"
+               android:scaleType="fitXY"
+               android:src="@drawable/ic_check_circle_black_24dp"/>
+</LinearLayout>

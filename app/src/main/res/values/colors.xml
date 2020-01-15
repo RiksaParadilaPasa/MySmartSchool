@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00a5fc</color>
+    <color name="colorPrimaryDark">#41f3a0</color>
+    <color name="colorAccent">#0084FF</color>
+
+    <color name="mssBlue">#00a5fc</color>
+    <color name="mssGreen">#41f3a0</color>
+    <color name="mssGrey">#aeaeae</color>
+    <color name="mssBlue30">#bce0fd</color>
+</resources>

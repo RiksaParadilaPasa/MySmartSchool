@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SmartInfo.InfoActivity"
+        android:orientation="vertical"
+        android:background="#fff">
+
+
+
+
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <ImageView
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/mssBlue"
+                android:scaleType="center"/>
+        <TextView
+                android:id="@+id/tv_judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul Berita"
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#00A5FC"
+                android:textStyle="bold"/>
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:layout_gravity="center"
+                android:background="@color/mssBlue30">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dari: "
+                    android:textColor="#00A5FC"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+
+            <TextView
+                    android:id="@+id/tv_pengirim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bu Offy"
+                    android:textColor="#00A5FC"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:padding="10dp"/>
+
+            <TextView
+                    android:id="@+id/tv_tanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 Agustus 2019"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="15dp"
+                    android:textColor="#00A5FC"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rincian "
+                    android:textColor="#00A5FC"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_marginTop="40dp"/>
+
+            <TextView
+                    android:id="@+id/tv_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp"
+                    android:text="ABOUT Lorem ipsum dulur et amed emet sahay dof amed"
+                    android:textColor="#00A5FC"
+                    android:textSize="15dp"
+                    android:padding="10dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:paddingLeft="20dp"
+                android:background="@drawable/smartinfo_edittext"
+                android:hint="Tulis komentar"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#90909090"/>
+    </LinearLayout>
+
+</LinearLayout>
