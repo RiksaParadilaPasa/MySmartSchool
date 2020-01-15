@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.mysmartschool.HomeFragment.HomeFragment;
 import com.example.mysmartschool.MyWork.MyWorkFragment;
 import com.example.mysmartschool.SmartInfo.SmartInfoFragment;
 import com.example.mysmartschool.SmartVideo.SmartVideoFragment;

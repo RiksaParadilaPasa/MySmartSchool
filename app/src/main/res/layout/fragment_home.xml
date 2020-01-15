@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                tools:listitem="@layout/fragment_tugas_list_item" />
+                tools:listitem="@layout/recycler_item_home" />
     </LinearLayout>
 
 </LinearLayout>

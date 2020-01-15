@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
@@ -7,6 +7,8 @@
         android:layout_height="match_parent">
 
     <FrameLayout
+        android:id="@+id/frame1"
+        app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
@@ -18,6 +20,8 @@
         </androidx.appcompat.widget.Toolbar>
     </FrameLayout>
     <View
+        android:id="@+id/view1"
+        app:layout_constraintTop_toBottomOf="@id/frame1"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#90909090"/>
@@ -26,8 +30,21 @@
             android:id="@+id/rv_video"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/recycler_item_smartvideo">
+            tools:listitem="@layout/recycler_item_smartvideo"
+        app:layout_constraintTop_toBottomOf="@id/view1">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-</LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_add_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="30dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
