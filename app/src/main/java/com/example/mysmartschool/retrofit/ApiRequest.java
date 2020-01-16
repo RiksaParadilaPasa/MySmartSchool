@@ -13,9 +13,9 @@ public class ApiRequest {
     public static Retrofit getClient(OkHttpClient okHttpClient) {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
                     .baseUrl(Config.SERVER_SCHEME + "://" + Config.SERVER_URL + ":" + Config.SERVER_PORT + "/" + Config.SERVER_SUB_URL)
                     .addConverterFactory(GsonConverterFactory.create())
-                    .client(okHttpClient)
                     .build();
         }
         return retrofit;

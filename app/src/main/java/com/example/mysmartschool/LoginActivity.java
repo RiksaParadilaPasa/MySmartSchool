@@ -1,10 +1,11 @@
 package com.example.mysmartschool;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -50,17 +51,29 @@ public class LoginActivity extends AppCompatActivity {
     private void callLoginEvent() {
         EventService request = ApiRequest.getClient(ApiClientKt.loginClient()).create(EventService.class);
         Call<Respone<LoginRespone>> call = request.getToken(
-                RequestBody.create(edtEmail.getText().toString(),MediaType.parse("text/plain")),
-                RequestBody.create(edtPassword.getText().toString(),MediaType.parse("text/plain")),
-                RequestBody.create("true",MediaType.parse("text/plain"))
+                RequestBody.create(edtEmail.getText().toString(), MediaType.parse("text/plain")),
+                RequestBody.create(edtPassword.getText().toString(), MediaType.parse("text/plain")),
+                RequestBody.create("true", MediaType.parse("text/plain"))
         );
         call.enqueue(new Callback<Respone<LoginRespone>>() {
             @Override
             public void onResponse(Call<Respone<LoginRespone>> call, Response<Respone<LoginRespone>> response) {
                 if (response.body() == null) {
+                    Toast.makeText(LoginActivity.this, "Mohon Maaf,aplikasi sedang dalam Perbaikan!", Toast.LENGTH_LONG).show();
                     return;
                 }
 
+                Respone<LoginRespone> body = response.body();
+                if (body.getCode() == 200) {
+                    Config.API_TOKEN = body.getData().getToken();
+                    Config.API_TOKEN_TYPE = body.getData().getTokenType();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                } else if (body.getCode() == 401) {
+                    Toast.makeText(LoginActivity.this, "Periksa ulang email/password Anda!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.d("login", body.getData().toString());
+                    Toast.makeText(LoginActivity.this, "Unknown Error", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
