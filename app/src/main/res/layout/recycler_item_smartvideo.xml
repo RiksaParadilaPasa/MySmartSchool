@@ -30,7 +30,7 @@
                     android:layout_margin="10dp"/>
 
             <TextView
-                    android:id="@+id/tv_judul"
+                    android:id="@+id/video_judul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Judul Video"
@@ -40,7 +40,7 @@
                     android:textStyle="bold"
                     android:layout_marginTop="5dp"/>
             <TextView
-                    android:id="@+id/tv_mapel"
+                    android:id="@+id/video_mapel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"

@@ -12,7 +12,7 @@
     <item android:id="@+id/menu_mywork"
           android:title="MyWork"
           android:icon="@drawable/ic_school_black_24dp"/>
-    <item android:id="@+id/menu_mywallet"
-          android:title="MyWallet"
-          android:icon="@drawable/ic_account_balance_wallet_black_24dp"/>
+<!--    <item android:id="@+id/menu_mywallet"-->
+<!--          android:title="MyWallet"-->
+<!--          android:icon="@drawable/ic_account_balance_wallet_black_24dp"/>-->
 </menu>
