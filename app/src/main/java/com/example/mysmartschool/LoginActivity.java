@@ -1,59 +1,72 @@
 package com.example.mysmartschool;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mysmartschool.dataclass.LoginRespone;
+import com.example.mysmartschool.dataclass.Respone;
+import com.example.mysmartschool.retrofit.ApiClientKt;
+import com.example.mysmartschool.retrofit.ApiRequest;
+import com.example.mysmartschool.retrofit.EventService;
 import com.google.firebase.auth.FirebaseAuth;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    EditText user, pass;
-    Button lgn;
+    EditText edtEmail, edtPassword;
+    Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        initComponent();
 
-        user = (EditText)findViewById(R.id.username);
-        pass = (EditText)findViewById(R.id.password);
-        lgn = (Button)findViewById(R.id.login);
+        initListener();
+    }
 
-        mAuth = FirebaseAuth.getInstance();
+    private void initComponent() {
+        edtEmail = findViewById(R.id.loginEmail);
+        edtPassword = findViewById(R.id.loginPassword);
+        btnLogin = findViewById(R.id.loginLogin);
+//        mAuth = FirebaseAuth.getInstance();
+    }
 
+    private void initListener() {
+        btnLogin.setOnClickListener(view -> callLoginEvent());
+    }
 
+    private void callLoginEvent() {
+        EventService request = ApiRequest.getClient(ApiClientKt.loginClient()).create(EventService.class);
+        Call<Respone<LoginRespone>> call = request.getToken(
+                RequestBody.create(edtEmail.getText().toString(),MediaType.parse("text/plain")),
+                RequestBody.create(edtPassword.getText().toString(),MediaType.parse("text/plain")),
+                RequestBody.create("true",MediaType.parse("text/plain"))
+        );
+        call.enqueue(new Callback<Respone<LoginRespone>>() {
+            @Override
+            public void onResponse(Call<Respone<LoginRespone>> call, Response<Respone<LoginRespone>> response) {
+                if (response.body() == null) {
+                    return;
+                }
 
-
-        lgn.setOnClickListener(new View.OnClickListener() {
+            }
 
             @Override
-            public void onClick(View view) {
-                final String users = user.getText().toString()+"@gmail.com";
-                final String passs = pass.getText().toString();
-                mAuth.signInWithEmailAndPassword(users,passs).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(LoginActivity.this, "GAGAL", Toast.LENGTH_SHORT).show();
-                            }
-                    }
-                });
+            public void onFailure(Call<Respone<LoginRespone>> call, Throwable t) {
+                Log.d("login", call.request().url().toString());
             }
         });
-
     }
 }
