@@ -2,9 +2,7 @@ package com.example.mysmartschool.retrofit
 
 import com.example.mysmartschool.Config
 import com.google.gson.GsonBuilder
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import okhttp3.Response
+import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -36,16 +34,21 @@ fun requestClient(): OkHttpClient {
     builder.readTimeout(Config.REQUEST_TIMEOUT.toLong(), TimeUnit.SECONDS)
     builder.connectTimeout(Config.REQUEST_TIMEOUT.toLong(), TimeUnit.SECONDS)
     builder.addInterceptor(logInterceptor)
-    builder.addInterceptor(object : Interceptor {
+    builder.addNetworkInterceptor(object : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val req = chain.request().newBuilder()
             req.addHeader("Accept", "application/json")
-            req.addHeader("Authorization","Bearer ")
+            req.addHeader("Authorization",String.format("Bearer %s",Config.API_TOKEN))
+            req.addHeader("asdfsadg","asgh")
             return chain.proceed(req.build())
+        }
+    })
+    builder.authenticator(object : Authenticator {
+        override fun authenticate(route: Route?, response: Response): Request? {
+            return response.request.newBuilder().header("Authorization",String.format("Bearer %s",Config.API_TOKEN)).build()
         }
 
     })
-
     return builder.build()
 }
 

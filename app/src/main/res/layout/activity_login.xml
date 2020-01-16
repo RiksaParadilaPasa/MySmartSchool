@@ -1,46 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mssBlue"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/loginEmail"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/login_edittext"
-        android:hint="Email"
-        app:layout_constraintBottom_toTopOf="@+id/loginPassword"
-        app:layout_constraintEnd_toEndOf="@+id/loginPassword"
-        app:layout_constraintStart_toStartOf="@+id/loginPassword"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
-
-    <EditText
-        android:id="@+id/loginPassword"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/login_edittext"
-        android:hint="Password"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Welcome to MySmartSchool"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/loginEmail"
+        style="@style/LoginEditText"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:hint="Email"
+        app:layout_constraintBottom_toTopOf="@+id/loginPassword"
+        app:layout_constraintEnd_toEndOf="@+id/loginPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/loginPassword"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924" />
+
+    <EditText
+        android:id="@+id/loginPassword"
+        style="@style/LoginEditText"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:hint="Password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.759" />
+
     <Button
         android:id="@+id/loginLogin"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@color/mssGreen"
+        android:layout_width="115dp"
+        android:layout_height="35dp"
+        android:background="@drawable/login_button"
         android:text="Login"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/loginPassword"
         app:layout_constraintStart_toStartOf="@+id/loginPassword"
         app:layout_constraintTop_toBottomOf="@+id/loginPassword"
-        app:layout_constraintVertical_bias="0.110000014" />
+        app:layout_constraintVertical_bias="0.256" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

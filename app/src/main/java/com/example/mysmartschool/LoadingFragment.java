@@ -1,4 +1,4 @@
-package com.example.mysmartschool.Myclass;
+package com.example.mysmartschool;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,15 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.mysmartschool.R;
-
-public class MyClassFragment extends Fragment {
+public class LoadingFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_myclass,null);
-
+        return inflater.inflate(R.layout.loading_layout, container, false);
     }
 
 }
