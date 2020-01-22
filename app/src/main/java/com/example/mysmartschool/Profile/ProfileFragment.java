@@ -1,7 +1,6 @@
 package com.example.mysmartschool.Profile;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.mysmartschool.Config;
 import com.example.mysmartschool.LoadingFragment;
 import com.example.mysmartschool.R;
 import com.example.mysmartschool.dataclass.SiswaProfileRespone;
-import com.example.mysmartschool.retrofit.ApiClient;
-import com.example.mysmartschool.retrofit.ApiClientKt;
-import com.example.mysmartschool.retrofit.ApiRequest;
-import com.example.mysmartschool.retrofit.EventService;
+import com.example.mysmartschool.api.ApiClient;
+import com.example.mysmartschool.api.ApiRequest;
+import com.example.mysmartschool.api.EventService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -58,13 +55,10 @@ public class ProfileFragment extends Fragment {
         loadingFragment = new LoadingFragment();
         EventService request = ApiRequest.getClient(new ApiClient().resourceClient()).create(EventService.class);
         call = request.getProfile();
-        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.main_frame, loadingFragment, "");
+        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.main_frame, loadingFragment, "").commit();
         call.enqueue(new Callback<SiswaProfileRespone>() {
             @Override
             public void onResponse(Call<SiswaProfileRespone> call, Response<SiswaProfileRespone> response) {
-                Log.d("profile", call.request().headers().toString());
-                Log.d("profile", call.request().toString());
-                Log.d("profile", call.request().header("Authorization") + "w");
                 if (response.body() == null) {
                     Toast.makeText(ProfileFragment.this.getActivity(), "Aplikasi sedang bermasalah", Toast.LENGTH_SHORT).show();
                     return;
@@ -77,13 +71,12 @@ public class ProfileFragment extends Fragment {
                 tvNis.setText(body.getNis());
                 tvKelas.setText(body.getKelas());
 
-                getActivity().getSupportFragmentManager().beginTransaction().remove(loadingFragment);
+                getActivity().getSupportFragmentManager().beginTransaction().remove(loadingFragment).commit();
             }
 
             @Override
             public void onFailure(Call<SiswaProfileRespone> call, Throwable t) {
-
-                getActivity().getSupportFragmentManager().beginTransaction().remove(loadingFragment);
+                getActivity().getSupportFragmentManager().beginTransaction().remove(loadingFragment).commit();
             }
         });
     }
