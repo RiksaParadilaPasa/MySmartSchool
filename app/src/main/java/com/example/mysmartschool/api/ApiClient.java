@@ -1,4 +1,4 @@
-package com.example.mysmartschool.retrofit;
+package com.example.mysmartschool.api;
 
 import com.example.mysmartschool.Config;
 
@@ -20,7 +20,7 @@ public class ApiClient {
                     .build();
             return chain.proceed(newReq);
         });
-        client.addInterceptor(interceptor);
+//        client.addInterceptor(interceptor);
         return client.build();
     }
 }

@@ -4,6 +4,9 @@
     package="com.example.mysmartschool">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:allowBackup="true"
@@ -14,10 +17,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".LoginActivity">
-
-        </activity>
-
-        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,8 +24,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".MainActivity"></activity>
+
         <activity android:name=".SmartInfo.InfoActivity" />
-        <activity android:name=".MainActivity"/>
     </application>
 
 
