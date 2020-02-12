@@ -11,7 +11,7 @@
             android:id="@+id/tambah_video_judul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="asupkeun anijing video"/>
+            android:hint="masukan video"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -23,7 +23,7 @@
             android:id="@+id/tambah_video_mapel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="asupkeun anijing mapel"/>
+            android:hint="Masukan Description"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -6,7 +6,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -16,19 +17,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".admin.Mapel.ActivityMapel"></activity>
+        <activity android:name=".admin.Admin.ActivityAdmin" />
+        <activity android:name=".admin.Kelas.ActivityKelas" />
+        <activity android:name=".admin.Murid.ActivityMurid" />
+        <activity android:name=".admin.Guru.ActivityGuru" />
+        <activity android:name=".Murid.Main3Activity" />
+        <activity android:name=".admin.Main2Activity">
+
+        </activity>
+        <activity android:name=".Guru.Myclass.MyTeacher.MyTeacher" />
+        <activity android:name=".Murid.Myclass.MyTeacher.MyTeachermurid" />
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"></activity>
-
-        <activity android:name=".SmartInfo.InfoActivity" />
+        <activity android:name=".Guru.MainActivity" />
+        <activity android:name=".Guru.SmartInfo.InfoActivity" />
     </application>
-
-
 
 </manifest>

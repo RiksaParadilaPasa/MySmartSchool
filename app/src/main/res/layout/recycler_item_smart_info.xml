@@ -42,7 +42,8 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/ic_settings_black_24dp"
                     android:scaleY="0.8"
-                    android:scaleX="0.8"/>
+                    android:scaleX="0.8"
+                android:visibility="visible"/>
 
         </RelativeLayout>
 
@@ -54,6 +55,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
         <ImageView
+                android:id="@+id/iv_berita"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"

@@ -6,7 +6,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".Guru.MainActivity">
 
     <FrameLayout
             android:id="@+id/main_frame"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:menu="@menu/menu_home"
+            app:menu="@menu/menu_home_guru"
             app:labelVisibilityMode="labeled"/>
 
 

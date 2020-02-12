@@ -75,7 +75,7 @@
                 android:paddingLeft="15dp"
                 android:paddingTop="2dp"
                 android:paddingBottom="5dp"
-                android:text="Tugas Terkini :"
+                android:text="Info Terkini :"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                tools:listitem="@layout/recycler_item_home" />
+                tools:listitem="@layout/recycler_item_home"/>
     </LinearLayout>
 
 </LinearLayout>

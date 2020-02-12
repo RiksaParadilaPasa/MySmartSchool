@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
+        tools:context=".Guru.MainActivity"
         android:orientation="vertical"
         android:background="#fff">
 
@@ -72,31 +72,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:background="@color/mssBlue"/>
-                <TextView
-                        android:id="@+id/tv_name_recycler"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nama"
-                        android:textSize="30dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#00A5FC"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="gmail"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#00A5FC"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Halo...lorem ipsum dolor amet"
-                        android:textSize="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="#00A5FC"/>
+<!--                <TextView-->
+<!--                        android:id="@+id/tv_name_recycler"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Nama"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:layout_marginBottom="20dp"-->
+<!--                        android:layout_marginLeft="20dp"-->
+<!--                        android:textColor="#00A5FC"/>-->
+
+<!--                <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Halo...lorem ipsum dolor amet"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:layout_marginLeft="20dp"-->
+<!--                        android:layout_marginTop="30dp"-->
+<!--                        android:layout_marginBottom="20dp"-->
+<!--                        android:textColor="#00A5FC"/>-->
             </LinearLayout>
 
 
@@ -116,6 +111,7 @@
                         android:textColor="#00A5FC"/>
 
                 <TextView
+                        android:id="@+id/tv_name_guru"
                         android:drawableLeft="@drawable/ic_person_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -133,6 +129,7 @@
                         android:layout_marginBottom="10dp"/>
 
                 <TextView
+                        android:id="@+id/tv_nip_guru"
                         android:drawableLeft="@drawable/ic_android_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -150,10 +147,11 @@
                         android:layout_marginBottom="10dp"/>
 
                 <TextView
+                        android:id="@+id/tv_nomor_guru"
                         android:drawableLeft="@drawable/ic_android_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="  Kelas : "
+                        android:text="  Nomor Hp : "
                         android:textSize="18dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
